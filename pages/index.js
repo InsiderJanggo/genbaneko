@@ -12,7 +12,7 @@ export default function Index({ posts }) {
         <title>{'現場猫ブログ・ホーム'}</title>
       </Head>
       <Popup message={'現場猫ブログへようこそ！'}/>
-    
+      <span className='text-center'>色々ポスト</span>
       {posts.map((data) => (
         <BlogCard data={data} key={data.slug} />
       ))}
