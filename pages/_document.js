@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 const defaultMeta = {
-    icon: '/favicon.ico',
+    icon: '/assets/realpenguin.jpg',
     meta: {
         title: '現場猫ブログ',
         description: "現場猫ファンサイト",
