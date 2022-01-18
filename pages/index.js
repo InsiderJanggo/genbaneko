@@ -4,6 +4,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import BlogCard from '@/components/BlogCard'
 import Popup from '@/components/Popup';
 import Text from '@/components/Text';
+import Container from '@/components/Container';
+import { createRef } from 'react';
 
 export default function Index({ posts }) {
   return (
@@ -12,13 +14,15 @@ export default function Index({ posts }) {
         <title>{'現場猫ブログ・ホーム'}</title>
       </Head>
       <Popup message={'現場猫ブログへようこそ！'}/>
-      <Text>色々ポスト</Text>
-      
-      {posts.map((data) => (
-        <BlogCard data={data} key={data.slug} />
-      ))}
-
-      <Popup message={'現場猫ブログへようこそ！'}/>     
+      <Container>
+       
+        <Text>色々ポスト：</Text>
+        
+        {posts.map((data) => (
+          <BlogCard data={data} key={data.slug} />
+        ))}
+      </Container>
+      <Popup message={'現場猫ブログへようこそ！'}/>    
     </div>
   )
 }
