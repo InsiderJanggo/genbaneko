@@ -9,8 +9,8 @@
     image: 
         cover: /assets/what-is-genbaneko/FHsiP5cacAEa1LN.jpg
     category_color: pink.500
-    createdAt: 17日1月2020年(月)
-    updatedAt: "最終更新日: 17日1月2020年(月)" 
+    createdAt: 18日1月2022年(火)
+    updatedAt: "最終更新日: 18日1月2022年(火)" 
 ---
 
 # 【どうして】「現場猫（仕事猫）」とかいう謎キャラまとめ【元ネタ】

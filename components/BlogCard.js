@@ -17,6 +17,10 @@ export default function BlogCard({ data }) {
                     <p className="text-gray-700 text-base">
                         {data.description}
                     </p>
+
+                    <p className="text-gray-800 text-base">
+                        投稿されたときに:{data.createdAt}
+                    </p>
                 </div>
             </div>
        </Link>
