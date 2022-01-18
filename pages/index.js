@@ -5,7 +5,6 @@ import BlogCard from '@/components/BlogCard'
 import Popup from '@/components/Popup';
 import Text from '@/components/Text';
 import Container from '@/components/Container';
-import { createRef } from 'react';
 
 export default function Index({ posts }) {
   return (
@@ -42,7 +41,8 @@ export async function getStaticProps(context) {
       'read',
       'description',
       'category',
-      'category_color'
+      'category_color',
+      'updatedAt'
     ]);
 
     return {

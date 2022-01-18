@@ -10,6 +10,7 @@
         cover: /assets/genbaneko-blog/denwaneko_1.png
     category_color: green.500
     createdAt: 17日1月2020年(月)
+    updatedAt: "最終更新日: 17日1月2020年(月)"
 ---
 
 # ・現場猫ブログ

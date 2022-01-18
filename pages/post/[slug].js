@@ -4,7 +4,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
-import Image from 'next/image'
 
 export default function Post({ data }) {
   return (
@@ -13,8 +12,17 @@ export default function Post({ data }) {
         <title>{data.title}・現場猫ブログ</title>
       </Head>
       <div className='container mx-auto'>
-          <Image alt='Image' src={data.image.cover} width={300} height={300} />
-          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+          <ReactMarkdown 
+          remarkPlugins={[remarkGfm]} 
+          rehypePlugins={[rehypeRaw]} 
+          components={{
+            a({ children, href }) {
+                return <a style={{ color: 'blue', cursor: 'pointer' }} href={href}>{children}</a>
+            },
+            h1({ children }) {
+              return <h1 className='text-center'>{children}</h1>
+            }
+          }}>
                 {data.content}
           </ReactMarkdown>
       </div>
@@ -57,7 +65,8 @@ export async function getStaticProps(context) {
       'read',
       'description',
       'category',
-      'category_color'
+      'category_color',
+      'updatedAt'
     ])
 
     return {
