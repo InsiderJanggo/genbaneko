@@ -4,8 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 export default function Post({ data }) {
   return (
@@ -28,7 +27,6 @@ export default function Post({ data }) {
               const match = /language-(\w+)/.exec(className || '')
               return !inline && match ? (
                 <SyntaxHighlighter
-                  style={dark}
                   language={match[1]}
                   PreTag="div"
                   {...props}
