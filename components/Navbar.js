@@ -1,9 +1,11 @@
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false);
     const router = useRouter()
+    const { t } = useTranslation()
 
     return(
         <>
@@ -41,7 +43,7 @@ export default function Navbar() {
                                     href="#"
                                     onClick={() => router.push('/')}
                                 >
-                                    ホーム
+                                    {t('navbar:home_link')}
                                 </a>
                             </li>
 

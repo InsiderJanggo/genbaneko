@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { getAllPosts } from '@/lib/markdownApi'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import BlogCard from '@/components/BlogCard'
 import Popup from '@/components/Popup';
 import Text from '@/components/Text';
+
 export default function Index({ posts }) {
   return (
     <div>
@@ -41,7 +43,8 @@ export async function getStaticProps(context) {
 
     return {
       props: {
-          posts
+          posts,
+          ...(await serverSideTranslations(context.locale, ['navbar']))
       }, 
     }
 }

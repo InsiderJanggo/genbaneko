@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function BlogCard({ data }) {
     return(
-       <Link href={'/post/[slug]'} as={`/post/${data.slug}`} passHref>
+       <Link href={'/post/[slug]'} as={`/post/${data.slug}`} passHref locale={false}>
             <div className="max-w-sm rounded overflow-hidden shadow-xl cursor-pointer">
                 <Image 
                     width={300}

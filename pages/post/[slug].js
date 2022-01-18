@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { getPostBySlug, getAllPosts } from '@/lib/markdownApi'
-import markdownToHtml from '@/lib/markdownToHtml'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
@@ -35,6 +35,7 @@ export async function getStaticPaths(context) {
             params: {
               slug: post.slug,
             },
+            locale: context.locale,
           }
         }),
         fallback: false,
@@ -62,6 +63,7 @@ export async function getStaticProps(context) {
     return {
         props: {
             data: post,
+            ...(await serverSideTranslations(context.locale, ['navbar']))
         }, 
     }
 }
