@@ -9,7 +9,9 @@ const defaultMeta = {
         twitter: {
            card: 'summary',
            site: '@wisly_ong',
-           creator: '@wisly_ong'
+           creator: '@wisly_ong',
+           title: '現場猫ブログ',
+           image: '/assets/realpenguin.jpg',
         }
     }
 }
@@ -17,13 +19,15 @@ const defaultMeta = {
 export default class MyDocument extends Document {
     render() {
         return(
-            <Html lang='ja' dir='ja'>
+            <Html>
                 <Head>
                     <meta name="description" content={defaultMeta.meta.description} />
                     <meta name='image' content={defaultMeta.meta.image} />
                     <link rel="icon" href={defaultMeta.icon} />
+                    <meta name='twitter:title' content={defaultMeta.meta.twitter.title} />
                     <meta name="twitter:card" content={defaultMeta.meta.twitter.card} />
                     <meta name="twitter:site" content={defaultMeta.meta.twitter.site} />
+                    <meta name="twitter:image" content={defaultMeta.meta.twitter.image} />
                     <meta name="twitter:creator" content={defaultMeta.meta.twitter.creator} />
                     <meta property="og:title" content={defaultMeta.meta.title} />
                     <meta property="og:description" content={defaultMeta.meta.description} />

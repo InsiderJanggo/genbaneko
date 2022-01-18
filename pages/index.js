@@ -3,8 +3,6 @@ import { getAllPosts } from '@/lib/markdownApi'
 import BlogCard from '@/components/BlogCard'
 import Popup from '@/components/Popup';
 import Text from '@/components/Text';
-import Image from 'next/image';
-
 export default function Index({ posts }) {
   return (
     <div>
@@ -12,7 +10,8 @@ export default function Index({ posts }) {
         <title>{'現場猫ブログ・ホーム'}</title>
       </Head>
       <Popup message={'現場猫ブログへようこそ！'}/>
-      <span className='text-center'>色々ポスト</span>
+      <Text>色々ポスト</Text>
+      
       {posts.map((data) => (
         <BlogCard data={data} key={data.slug} />
       ))}

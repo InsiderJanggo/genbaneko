@@ -12,10 +12,12 @@ export default function Post({ data }) {
       <Head>
         <title>{data.title}・現場猫ブログ</title>
       </Head>
-      <Image alt='Image' src={data.image.cover} width={300} height={300} />
-       <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-            {data.content}
-       </ReactMarkdown>
+      <div className='container mx-auto'>
+          <Image alt='Image' src={data.image.cover} width={300} height={300} />
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+                {data.content}
+          </ReactMarkdown>
+      </div>
     </div>
   )
 }
