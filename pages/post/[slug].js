@@ -18,6 +18,7 @@ export default function Post({ data }) {
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.description} />
         <meta property="og:image" content={data.image.cover} />
+        <meta property='twitter:image' content={data.image.cover} />
       </Head>
       <div className='container mx-auto'>
           <ReactMarkdown 
