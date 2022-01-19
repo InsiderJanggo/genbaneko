@@ -16,8 +16,10 @@
 ---
 
 # 【どうして】「現場猫（仕事猫）」とかいう謎キャラまとめ【元ネタ】
+カテゴリー: <category>建物</category>
 
 ![genbaneko](/assets/what-is-genbaneko/genbaneko.jpg)
+
 
 
 最近、上のようなヘルメットを被った猫を、Twitterなどを始めネット上で見かけたことある方、いませんか？

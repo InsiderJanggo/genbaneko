@@ -6,8 +6,9 @@ import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import ScrollToTop from '@/components/ScrollToTop';
+import Link from 'next/link';
 
-export default function Post({ data }) {
+export default function Post({ data, otherPost }) {
   return (
     <div>
       <Head>
@@ -49,12 +50,24 @@ export default function Post({ data }) {
             },
             block({ children }) {
                 return <block style={{ backgroundColor: '#092237!important', color: 'white' }}>{children}</block>
+            },
+            category({ children }) {
+              return (
+                <Link href={`/category/[name]`} as={`/category/${data.category.id}`} passHref>
+                  <category style={{ textAlign: 'center', color: 'blue', cursor: 'pointer' }}>
+                    {children}
+                  </category>
+                </Link>
+              )
             }
           }}>
                 {data.content}
           </ReactMarkdown>
-          <ScrollToTop />
       </div>
+      <div className='container mx-auto'>
+          
+      </div>
+      <ScrollToTop />
     </div>
   )
 }
@@ -97,10 +110,24 @@ export async function getStaticProps(context) {
       'category_color',
       'updatedAt'
     ])
+    const otherPost = getAllPosts([
+      'title',
+      'createdAt',
+      'slug',
+      'author',
+      'content',
+      'image',
+      'read',
+      'description',
+      'category',
+      'category_color',
+      'updatedAt'
+    ])
 
     return {
         props: {
             data: post,
+            otherPost,
             ...(await serverSideTranslations(context.locale, ['navbar']))
         }, 
     }

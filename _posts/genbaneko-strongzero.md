@@ -16,6 +16,7 @@
 ---
 
 # 【現場猫ストロングゼロ】仕事猫（電話猫）のストロングゼロについて
+カテゴリー: <category>健康</category>
 
 ![strongzero_img](/assets/genbaneko-strongzero/stronzero.jpg)
 
