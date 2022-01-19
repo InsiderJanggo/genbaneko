@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { getAllPosts } from '@/lib/markdownApi';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import BlogCard from '@/components/BlogCard';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export default function Category({ posts, param }) {
     return (
@@ -22,6 +23,7 @@ export default function Category({ posts, param }) {
                     <BlogCard key={post.slug} data={post} />
                 ))}
             </Container>
+            <ScrollToTop />
         </div>
     )
 }
