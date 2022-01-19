@@ -5,12 +5,19 @@ import BlogCard from '@/components/BlogCard'
 import Popup from '@/components/Popup';
 import Text from '@/components/Text';
 import Container from '@/components/Container';
+import defaultMeta from '@/lib/defaultMeta';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export default function Index({ posts }) {
   return (
     <div>
       <Head>
         <title>{'現場猫ブログ・ホーム'}</title>
+        <meta name="description" content={defaultMeta.meta.description} />
+        <meta name='image' content={defaultMeta.meta.image} />
+        <meta property="og:title" content={defaultMeta.meta.title} />
+        <meta property="og:description" content={defaultMeta.meta.description} />
+        <meta property="og:image" content={defaultMeta.meta.image} />
       </Head>
       <Popup message={'現場猫ブログへようこそ！'}/>
       <Container>
@@ -21,7 +28,8 @@ export default function Index({ posts }) {
           <BlogCard data={data} key={data.slug} />
         ))}
       </Container>
-      <Popup message={'現場猫ブログへようこそ！'}/>    
+      <Popup message={'現場猫ブログへようこそ！'}/>   
+      <ScrollToTop /> 
     </div>
   )
 }

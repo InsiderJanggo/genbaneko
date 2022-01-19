@@ -2,7 +2,9 @@
     title: 現場猫ブログ
     slug: genbaneko-blog
     description: 「現場猫ブログ」へようこそ！ 
-    category: ブログ
+    category: 
+        name: ブログ
+        id: blog
     author:
         name: RealPenguin
         img: /assets/realpenguin.jpg
@@ -13,12 +15,12 @@
     updatedAt: "最終更新日: 17日1月2022年(月)"
 ---
 
-# ・現場猫ブログ
+# 現場猫ブログ
 
 みんなさん どうも、私の新しいサイト**現場猫ブログ**へようこそ、このサイトはファンが作ったものです
 
-# ・サイトクリエーターについて
+# サイトクリエーターについて
 > 私の名前はリアルペンギンです。私はクリエーターで、現場猫が大好きです。
 
-> ・リアルペンギン(RealPenguin)
+> リアルペンギン(RealPenguin)
 ![realpenguin](/assets/realpenguin.jpg)

@@ -2,7 +2,9 @@
     title: 「現場猫（仕事猫）」とかいう謎キャラまとめ【元ネタ】
     slug: what-is-genbaneko
     description: 最近、上のようなヘルメットを被った猫を、Twitterなどを始めネット上で見かけたことある方、いませんか？
-    category: 建物
+    category: 
+        name: 建物
+        id: construction
     author:
         name: RealPenguin
         img: /assets/realpenguin.jpg

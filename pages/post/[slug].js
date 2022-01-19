@@ -5,12 +5,19 @@ import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export default function Post({ data }) {
   return (
     <div>
       <Head>
         <title>{data.title}・現場猫ブログ</title>
+        <meta name="title" content={data.title} />
+        <meta name="description" content={data.description} />
+        <meta name='image' content={data.image.cover} />
+        <meta property="og:title" content={data.title} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:image" content={data.image.cover} />
       </Head>
       <div className='container mx-auto'>
           <ReactMarkdown 
@@ -38,10 +45,14 @@ export default function Post({ data }) {
                   {children}
                 </code>
               )
+            },
+            block({ children }) {
+                return <block style={{ backgroundColor: '#092237!important', color: 'white' }}>{children}</block>
             }
           }}>
                 {data.content}
           </ReactMarkdown>
+          <ScrollToTop />
       </div>
     </div>
   )
