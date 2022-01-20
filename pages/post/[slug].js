@@ -77,7 +77,7 @@ export default function Post({ data, otherPost }) {
             },
             twitter({ children, ...props }) {
               return(
-                <TwitterButton {...props} title={data.title} url={`${process.env.VERCEL_URL}/post/${data.slug}`}>
+                <TwitterButton {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
                     {children}
                 </TwitterButton>
               )
@@ -91,14 +91,14 @@ export default function Post({ data, otherPost }) {
             },
             facebook({ children, ...props }) {
               return(
-                <Facebook {...props} title={data.title} url={`${process.env.VERCEL_URL}/post/${data.slug}`}>
+                <Facebook {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
                     {children}
                 </Facebook>
               )
             },
             lineshare({ children, ...props }) {
               return(
-                <Line {...props} title={data.title} url={`${process.env.VERCEL_URL}/post/${data.slug}`}>
+                <Line {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
                     {children}
                 </Line>
               )
