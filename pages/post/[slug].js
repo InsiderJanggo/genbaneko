@@ -7,8 +7,9 @@ import remarkGfm from 'remark-gfm'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import ScrollToTop from '@/components/ScrollToTop';
 import Link from 'next/link';
+import { getRandomInt } from '@/lib/randNumber';
 import Category from '@/components/Category';
-import { createRef } from 'react';
+import { createRef, useEffect } from 'react';
 import defaultMeta from '@/lib/defaultMeta';
 import TwitterButton from '@/components/TwitterButton';
 import Facebook from '@/components/Facebook';
@@ -17,6 +18,10 @@ import BlogCard from '@/components/BlogCard';
 
 export default function Post({ data, otherPost }) {
   const ref = createRef()
+
+  useEffect(() => {
+    console.log(getRandomInt(1, 10))
+  }, [])
 
   return (
     <div>
@@ -111,7 +116,7 @@ export default function Post({ data, otherPost }) {
           <h2 style={{ textAlign: 'center', fontWeight: 'bold' }}>他ポスト:</h2>
           {otherPost.map((post) => (
             <BlogCard data={post} key={post.slug} />
-          )).splice(1, 2)}
+          )).splice(getRandomInt(1, 3), getRandomInt(0, 5))}
       </div>
       <ScrollToTop />
     </div>
