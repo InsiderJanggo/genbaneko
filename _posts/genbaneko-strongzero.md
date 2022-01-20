@@ -20,6 +20,12 @@
 
 ![strongzero_img](/assets/genbaneko-strongzero/stronzero.jpg)
 
+<span>色々SNSで共有する</span>
+
+<twitter></twitter>
+<facebook></facebook>
+<lineshare></lineshare>
+
 現場猫はなぜいつもストロングゼロを持っている？
 
 > →嫌なことは全て忘れられるから。

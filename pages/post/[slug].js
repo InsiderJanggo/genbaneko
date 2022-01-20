@@ -9,6 +9,10 @@ import ScrollToTop from '@/components/ScrollToTop';
 import Link from 'next/link';
 import Category from '@/components/Category';
 import { createRef } from 'react';
+import defaultMeta from '@/lib/defaultMeta';
+import TwitterButton from '@/components/TwitterButton';
+import Facebook from '@/components/Facebook';
+import Line from '@/components/Line';
 
 export default function Post({ data, otherPost }) {
   const ref = createRef()
@@ -23,7 +27,7 @@ export default function Post({ data, otherPost }) {
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.description} />
         <meta property="og:image" content={data.image.cover} />
-        <meta property='twitter:image' content={data.image.cover} />
+        <meta property='twitter:image' content={defaultMeta.icon} />
       </Head>
       <div className='container mx-auto'>
           <ReactMarkdown 
@@ -70,13 +74,38 @@ export default function Post({ data, otherPost }) {
                   {children}
                 </h2>
               )
-            }
+            },
+            twitter({ children, ...props }) {
+              return(
+                <TwitterButton {...props} title={data.title} url={`${process.env.VERCEL_URL}/post/${data.slug}`}>
+                    {children}
+                </TwitterButton>
+              )
+            },
+            span({ children }) {
+              return(
+                <span style={{ fontWeight: 'bolder' }}>
+                  {children}
+                </span>
+              )
+            },
+            facebook({ children, ...props }) {
+              return(
+                <Facebook {...props} title={data.title} url={`${process.env.VERCEL_URL}/post/${data.slug}`}>
+                    {children}
+                </Facebook>
+              )
+            },
+            lineshare({ children, ...props }) {
+              return(
+                <Line {...props} title={data.title} url={`${process.env.VERCEL_URL}/post/${data.slug}`}>
+                    {children}
+                </Line>
+              )
+            },
           }}>
                 {data.content}
           </ReactMarkdown>
-      </div>
-      <div className='container mx-auto'>
-          
       </div>
       <ScrollToTop />
     </div>

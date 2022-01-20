@@ -21,6 +21,12 @@
 
 ![shigotoneko](/assets/genbaneko-blog-update-1/FJHaIXjagAUYoGQ.jfif)
 
+<span>色々SNSで共有する</span>
+
+<twitter></twitter>
+<facebook></facebook>
+<lineshare></lineshare>
+
 今日は、現場猫ブログの更新された投稿です
 <br />
 

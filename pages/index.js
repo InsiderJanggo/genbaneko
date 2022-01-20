@@ -7,8 +7,25 @@ import Text from '@/components/Text';
 import Container from '@/components/Container';
 import defaultMeta from '@/lib/defaultMeta';
 import ScrollToTop from '@/components/ScrollToTop';
+import SearchInput from '@/components/SearchInput';
+import { useState } from 'react';
+import Input from '@/components/Input';
+
+const BASE_URL = 'https://twitter.com/intent/tweet?url='
 
 export default function Index({ posts }) {
+    const [value, setValue] = useState('')
+
+
+    /**
+     * @param {Array} rows 
+     * @param {String} filterKeys 
+     * @returns 
+    */
+    const searchPost = (rows, filterKeys) => {
+        return rows.filter((row) => JSON.stringify(row).includes(filterKeys))
+    }
+
   return (
     <div>
       <Head>
@@ -22,9 +39,18 @@ export default function Index({ posts }) {
       </Head>
       <Container>
        
+        <SearchInput onSubmit={searchPost}>
+          <div className="px-5 py-5">
+                <Text>ポストを検索</Text>
+            </div>
+            <div>
+                <Input value={value} onChange={(e) => setValue(e.target.value)} />
+            </div>
+        </SearchInput>
+
         <Text>色々ポスト：</Text>
         
-        {posts.map((data) => (
+        {searchPost(posts, value).map((data) => (
           <BlogCard data={data} key={data.slug} />
         ))}
       </Container>

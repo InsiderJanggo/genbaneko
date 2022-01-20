@@ -21,6 +21,11 @@
 ![genbaneko](/assets/what-is-genbaneko/genbaneko.jpg)
 
 
+<span>色々SNSで共有する</span>
+
+<twitter></twitter>
+<facebook></facebook>
+<lineshare></lineshare>
 
 最近、上のようなヘルメットを被った猫を、Twitterなどを始めネット上で見かけたことある方、いませんか？
 
