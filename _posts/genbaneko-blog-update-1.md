@@ -16,8 +16,7 @@
 ---
 
 # 【現場猫ブログ】アップデートブログ
-
-カテゴリー: <category>アップデート</category>
+<category>アップデート</category>
 
 ![shigotoneko](/assets/genbaneko-blog-update-1/FJHaIXjagAUYoGQ.jfif)
 

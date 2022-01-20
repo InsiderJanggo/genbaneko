@@ -13,6 +13,7 @@ import defaultMeta from '@/lib/defaultMeta';
 import TwitterButton from '@/components/TwitterButton';
 import Facebook from '@/components/Facebook';
 import Line from '@/components/Line';
+import BlogCard from '@/components/BlogCard';
 
 export default function Post({ data, otherPost }) {
   const ref = createRef()
@@ -30,6 +31,7 @@ export default function Post({ data, otherPost }) {
         <meta property='twitter:image' content={defaultMeta.icon} />
       </Head>
       <div className='container mx-auto'>
+          
           <ReactMarkdown 
           remarkPlugins={[remarkGfm]} 
           rehypePlugins={[rehypeRaw]} 
@@ -77,7 +79,7 @@ export default function Post({ data, otherPost }) {
             },
             twitter({ children, ...props }) {
               return(
-                <TwitterButton {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
+                <TwitterButton className='text-center' {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
                     {children}
                 </TwitterButton>
               )
@@ -91,21 +93,25 @@ export default function Post({ data, otherPost }) {
             },
             facebook({ children, ...props }) {
               return(
-                <Facebook {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
+                <Facebook className='text-center' {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
                     {children}
                 </Facebook>
               )
             },
             lineshare({ children, ...props }) {
               return(
-                <Line {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
+                <Line className='text-center' {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
                     {children}
                 </Line>
               )
             },
           }}>
-                {data.content}
+                  {data.content}
           </ReactMarkdown>
+          <h2 style={{ textAlign: 'center', fontWeight: 'bold' }}>他ポスト:</h2>
+          {otherPost.map((post) => (
+            <BlogCard data={post} key={post.slug} />
+          )).splice(1, 2)}
       </div>
       <ScrollToTop />
     </div>

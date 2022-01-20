@@ -16,7 +16,7 @@
 ---
 
 # 【どうして】「現場猫（仕事猫）」とかいう謎キャラまとめ【元ネタ】
-カテゴリー: <category>建物</category>
+<category>建物</category>
 
 ![genbaneko](/assets/what-is-genbaneko/genbaneko.jpg)
 
