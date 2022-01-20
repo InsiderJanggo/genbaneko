@@ -20,7 +20,6 @@ export default function Index({ posts }) {
         <meta property="og:description" content={defaultMeta.meta.description} />
         <meta property="og:image" content={defaultMeta.meta.image} />
       </Head>
-      <Popup message={'現場猫ブログへようこそ！'}/>
       <Container>
        
         <Text>色々ポスト：</Text>
@@ -29,7 +28,6 @@ export default function Index({ posts }) {
           <BlogCard data={data} key={data.slug} />
         ))}
       </Container>
-      <Popup message={'現場猫ブログへようこそ！'}/>   
       <ScrollToTop /> 
     </div>
   )

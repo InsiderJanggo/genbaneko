@@ -7,8 +7,12 @@ import remarkGfm from 'remark-gfm'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import ScrollToTop from '@/components/ScrollToTop';
 import Link from 'next/link';
+import Category from '@/components/Category';
+import { createRef } from 'react';
 
 export default function Post({ data, otherPost }) {
+  const ref = createRef()
+
   return (
     <div>
       <Head>
@@ -54,10 +58,17 @@ export default function Post({ data, otherPost }) {
             category({ children }) {
               return (
                 <Link href={`/category/[name]`} as={`/category/${data.category.id}`} passHref>
-                  <category style={{ textAlign: 'center', color: 'blue', cursor: 'pointer' }}>
+                  <Category ref={ref} style={{ textAlign: 'center', color: 'blue', cursor: 'pointer' }}>
                     {children}
-                  </category>
+                  </Category>
                 </Link>
+              )
+            },
+            h2({ children }) {
+              return(
+                <h2 style={{ fontWeight: 'bold' }}>
+                  {children}
+                </h2>
               )
             }
           }}>

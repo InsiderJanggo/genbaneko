@@ -7,10 +7,16 @@ import BlogCard from '@/components/BlogCard';
 import ScrollToTop from '@/components/ScrollToTop';
 
 export default function Category({ posts, param }) {
+    const getCategory = () => {
+        return posts.filter(data => param == data.category.id).map((data) => {
+            return data.category.name
+        })
+    }
+
     return (
         <div>
             <Head>
-                <title>{param}・現場猫ブログ</title>
+                <title>「{getCategory()}」 カテゴリー・現場猫ブログ</title>
                 <meta name="description" content={defaultMeta.meta.description} />
                 <meta name='image' content={defaultMeta.meta.image} />
                 <meta property='twitter:image' content={defaultMeta.meta.image} />
