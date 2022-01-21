@@ -116,7 +116,7 @@ export default function Post({ data, otherPost }) {
           <h2 style={{ textAlign: 'center', fontWeight: 'bold' }}>他ポスト:</h2>
           {otherPost.map((post) => (
             <BlogCard data={post} key={post.slug} />
-          )).splice(getRandomInt(1, 3), getRandomInt(0, 5))}
+          )).splice(getRandomInt(0, 2), getRandomInt(1, 2))}
       </div>
       <ScrollToTop />
     </div>
