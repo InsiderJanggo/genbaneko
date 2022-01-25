@@ -17,7 +17,7 @@ export default function Category({ posts, param }) {
     return (
         <div>
             <Head>
-                <title>「{getCategory()}」 カテゴリー・現場猫ブログ</title>
+                <title>「{param}」 カテゴリー・現場猫ブログ</title>
                 <meta name="description" content={defaultMeta.meta.description} />
                 <meta name='image' content={defaultMeta.meta.image} />
                 <meta property='twitter:image' content={defaultMeta.icon} />

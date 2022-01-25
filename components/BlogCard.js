@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function BlogCard({ data }) {
     return(
        <Link href={'/post/[slug]'} as={`/post/${data.slug}`} passHref locale={false}>
@@ -14,6 +13,7 @@ export default function BlogCard({ data }) {
                 />
                 <div className="px-6 py-4">
                     <div className="font-bold text-xl mb-2">{data.title}</div>
+                    
                     <p className="text-gray-700 text-base">
                         {data.description}
                     </p>
@@ -21,6 +21,7 @@ export default function BlogCard({ data }) {
                     <p className="text-gray-800 text-base">
                         投稿されたときに:{data.createdAt}
                     </p>
+
                 </div>
             </div>
        </Link>

@@ -50,9 +50,11 @@ export default function Index({ posts }) {
 
         <Text>色々ポスト：</Text>
         
-        {searchPost(posts, value).map((data) => (
-          <BlogCard data={data} key={data.slug} />
-        ))}
+        <div className='grid grid-rows-3 grid-flow-col gap-4'>
+          {searchPost(posts, value).map((data) => (
+            <BlogCard data={data} key={data.slug} />
+          ))}
+        </div>
       </Container>
       <ScrollToTop /> 
     </div>
