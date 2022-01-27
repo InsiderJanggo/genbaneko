@@ -26,6 +26,7 @@
 <twitter></twitter>
 <facebook></facebook>
 <lineshare></lineshare>
+<whatsapp></whatsapp>
 
 最近、上のようなヘルメットを被った猫を、Twitterなどを始めネット上で見かけたことある方、いませんか？
 

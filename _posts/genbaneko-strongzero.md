@@ -25,6 +25,7 @@
 <twitter></twitter>
 <facebook></facebook>
 <lineshare></lineshare>
+<whatsapp></whatsapp>
 
 現場猫はなぜいつもストロングゼロを持っている？
 

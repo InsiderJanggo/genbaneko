@@ -25,6 +25,7 @@
 <twitter></twitter>
 <facebook></facebook>
 <lineshare></lineshare>
+<whatsapp></whatsapp>
 
 今日は、現場猫ブログのアプリを発表されました
 <br />

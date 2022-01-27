@@ -10,8 +10,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import SearchInput from '@/components/SearchInput';
 import { useState } from 'react';
 import Input from '@/components/Input';
-
-const BASE_URL = 'https://twitter.com/intent/tweet?url='
+import Link from 'next/link';
 
 export default function Index({ posts }) {
     const [value, setValue] = useState('')
@@ -37,6 +36,11 @@ export default function Index({ posts }) {
         <meta property="og:description" content={defaultMeta.meta.description} />
         <meta property="og:image" content={defaultMeta.meta.image} />
       </Head>
+      <Popup>
+        <Link href={'https://discord.gg/atnMD7ZWjh'} passHref>
+          <span style={{ cursor: 'pointer' }}>現場猫Discordサーバー参加しててよ！</span>
+        </Link>
+      </Popup>
       <Container>
        
         <SearchInput onSubmit={searchPost}>
@@ -57,6 +61,11 @@ export default function Index({ posts }) {
         </div>
       </Container>
       <ScrollToTop /> 
+      <Popup>
+        <Link href={'https://discord.gg/atnMD7ZWjh'} passHref>
+          <span style={{ cursor: 'pointer' }}>現場猫Discordサーバー参加しててよ！</span>
+        </Link>
+      </Popup>
     </div>
   )
 }

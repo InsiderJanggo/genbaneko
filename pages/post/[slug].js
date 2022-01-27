@@ -15,6 +15,7 @@ import TwitterButton from '@/components/TwitterButton';
 import Facebook from '@/components/Facebook';
 import Line from '@/components/Line';
 import BlogCard from '@/components/BlogCard';
+import Whatsapp from '@/components/Whatsapp';
 
 export default function Post({ data, otherPost }) {
   const ref = createRef()
@@ -110,6 +111,13 @@ export default function Post({ data, otherPost }) {
                 </Line>
               )
             },
+            whatsapp({ children, ...props }) {
+              return(
+                <Whatsapp className='text-center' {...props} title={data.title} url={`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://genbaneko.vercel.app'}/post/${data.slug}`}>
+                  {children}
+                </Whatsapp>
+              )
+            }
           }}>
                   {data.content}
           </ReactMarkdown>

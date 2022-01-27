@@ -25,6 +25,7 @@
 <twitter></twitter>
 <facebook></facebook>
 <lineshare></lineshare>
+<whatsapp></whatsapp>
 
 # サイトクリエーターについて
 > 私の名前はリアルペンギンです。私はクリエーターで、現場猫が大好きです。

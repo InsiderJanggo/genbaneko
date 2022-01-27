@@ -25,6 +25,7 @@
 <twitter></twitter>
 <facebook></facebook>
 <lineshare></lineshare>
+<whatsapp></whatsapp>
 
 # 色々現場猫のイメージよしよしヾ(・ω・｀)
 
